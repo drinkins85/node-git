@@ -12,6 +12,7 @@ module.exports = {
     "max-len": ["error", 120],
     "no-plusplus": "off",
     "linebreak-style": "off",
-    "no-unused-vars": "off"
+    "no-unused-vars": "off",
+    "global-require": "off",
   }
 };

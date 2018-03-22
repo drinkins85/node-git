@@ -9,7 +9,7 @@
     "node": ">=8.4.0"
   },
   "scripts": {
-    "ci": "npm run eslint && npm run build",
+    "ci": "npm run build",
     "eslint": "node_modules/.bin/eslint *.js",
     "server": "browser-sync start --server",
     "watch": "set NODE_ENV=development&& webpack --watch",
