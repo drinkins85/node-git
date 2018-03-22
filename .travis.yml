@@ -16,10 +16,11 @@ notifications:
 script:
   - npm run ci
 
-deploy:
-  provider: heroku
-  stage: node-git
-  api_key:
-    secure: "adbe9610-2f0b-4b47-8966-0d65d58f3ec0"
+
+#deploy:
+#  provider: heroku
+#  stage: node-git
+#  api_key:
+#    secure: "adbe9610-2f0b-4b47-8966-0d65d58f3ec0"
 
 
