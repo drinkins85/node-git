@@ -12,4 +12,4 @@ app.get('/', (req, res) => {
 
 app.listen(port, host);
 
-console.log(`App listen on: ${port} `);
+console.log(`App listen on: ${port} port `);
