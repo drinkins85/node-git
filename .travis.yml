@@ -1,2 +1,15 @@
 language: node_js
-node_js: "node"
+
+node_js:
+  - 'node'
+  - '8'
+  - '6'
+  - '4'
+
+notifications:
+  email: false
+
+script:
+  - npm run ci
+
+
