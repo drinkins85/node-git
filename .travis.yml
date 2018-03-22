@@ -16,9 +16,6 @@ notifications:
 script:
   - npm run ci
 
-deploy:
-  provider: heroku
-  api_key:
-    secure: "adbe9610-2f0b-4b47-8966-0d65d58f3ec0"
+
 
 
