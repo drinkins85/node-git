@@ -18,8 +18,9 @@ script:
 
 
 #deploy:
+#  stage: Deploy (development)
 #  provider: heroku
-#  stage: node-git
+#  app: node-git-test-app
 #  api_key:
 #    secure: "adbe9610-2f0b-4b47-8966-0d65d58f3ec0"
 
