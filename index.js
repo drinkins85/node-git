@@ -12,7 +12,8 @@ app.get('/', (req, res) => {
 });
 
 app.get('/git', (req, res) => {
-  const git = process.spawn('git', ['status']);
+  // const git = process.spawn('git', ['status']);
+  const git = process.spawn('ls');
   const out = [];
   git.stdout.on('data', (data) => {
     out.push(data);
