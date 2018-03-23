@@ -2,8 +2,8 @@ const express = require('express');
 const process = require('child_process');
 
 const app = express();
-const port = process.env.PORT || 3003;
-const host = '0.0.0.0';
+const PORT = 8080;
+const HOST = '0.0.0.0';
 
 app.use(express.static(`${__dirname}/public`));
 
@@ -26,6 +26,6 @@ app.get('/git', (req, res) => {
   });
 });
 
-app.listen(port, host);
+app.listen(PORT, HOST);
 
-console.log(`App listen on port ${port}`);
+console.log(`App listen on port ${PORT}`);
