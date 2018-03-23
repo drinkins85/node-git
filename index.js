@@ -1,9 +1,9 @@
 const express = require('express');
-const process = require('child_process');
+const childProcess = require('child_process');
 
 const app = express();
-const PORT = 8080;
-const HOST = '0.0.0.0';
+const port = process.env.PORT || 3000;
+const host = '0.0.0.0';
 
 app.use(express.static(`${__dirname}/public`));
 
@@ -13,7 +13,7 @@ app.get('/', (req, res) => {
 
 app.get('/git', (req, res) => {
   // const git = process.spawn('git', ['status']);
-  const git = process.spawn('ls');
+  const git = childProcess.spawn('ls');
   const out = [];
   git.stdout.on('data', (data) => {
     out.push(data);
@@ -27,6 +27,6 @@ app.get('/git', (req, res) => {
   });
 });
 
-app.listen(PORT, HOST);
+app.listen(port, host);
 
-console.log(`App listen on port ${PORT}`);
+console.log(`App listen on port ${port}`);
