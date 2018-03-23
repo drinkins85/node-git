@@ -28,8 +28,8 @@ app.get('/git', (req, res) => {
 });
 
 
-app.get('/gitcwd', (req, res) => {
-  const git = childProcess.spawn('git', ['status'], { cwd: './repo' });
+app.get('/gitclone', (req, res) => {
+  const git = childProcess.spawn('git', ['clone', 'https://github.com/drinkins85/node-git.git', 'n--rep']);
   // const git = childProcess.spawn('ls');
   const out = [];
   git.stdout.on('data', (data) => {
