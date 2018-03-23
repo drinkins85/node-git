@@ -27,6 +27,22 @@ app.get('/git', (req, res) => {
   });
 });
 
+app.get('/gitcwd', (req, res) => {
+  const cwd = req.query.cwd;
+  const git = childProcess.spawn('git', ['status'], { cwd });
+  // const git = childProcess.spawn('ls');
+  const out = [];
+  git.stdout.on('data', (data) => {
+    out.push(data);
+  });
+  git.stderr.on('data', (data) => {
+    out.push(data);
+  });
+  git.on('close', (code) => {
+    console.log(out.toString());
+    res.send(`${out.toString()}`);
+  });
+});
 
 app.get('/gitclone', (req, res) => {
   const git = childProcess.spawn('git', ['clone', 'https://github.com/drinkins85/node-git.git', 'n--rep']);
@@ -44,8 +60,6 @@ app.get('/gitclone', (req, res) => {
   });
 });
 
-
-
 app.get('/ls', (req, res) => {
   const git = childProcess.spawn('ls');
   // const git = childProcess.spawn('ls');
@@ -61,7 +75,6 @@ app.get('/ls', (req, res) => {
     res.send(`${out.toString()}`);
   });
 });
-
 
 
 app.listen(port, host);
