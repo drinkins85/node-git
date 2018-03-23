@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/git', (req, res) => {
-  const git = childProcess.spawn('git', ['status']);
+  const git = childProcess.spawn('git', ['status'], { cwd: 'repo' });
   // const git = childProcess.spawn('ls');
   const out = [];
   git.stdout.on('data', (data) => {
