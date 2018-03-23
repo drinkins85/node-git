@@ -4,8 +4,6 @@ const app = express();
 const port = process.env.PORT || 3003;
 const host = '0.0.0.0';
 
-// const getBtanchList = require('./gitAPI/getBranchList');
-
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res) => {
@@ -13,12 +11,19 @@ app.get('/', (req, res) => {
 });
 
 app.get('/git', (req, res) => {
-/*
-  getBtanchList().then((branches) => {
-    res.send(`Hello, Git ${branches}`);
-  }); */
+  const git = process.spawn('git', 'status');
+  const out = [];
+  git.stdout.on('data', (data) => {
+    out.push(data);
+  });
+  git.stderr.on('data', (data) => {
+    out.push(data);
+  });
+  git.on('close', (code) => {
+    console.log(out.toString());
+    res.send(`Hello, Git ${out.toString()}`);
+  });
 });
-
 
 app.listen(port, host);
 
