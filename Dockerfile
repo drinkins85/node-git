@@ -8,6 +8,7 @@ RUN apt-get update
 
 # Install software
 RUN apt-get install -y git
+RUN git clone https://github.com/drinkins85/node-git.git newrepo
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied

@@ -12,7 +12,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/git', (req, res) => {
-  const git = childProcess.spawn('git', ['status'], { cwd: 'public/repo' });
+  const git = childProcess.spawn('git', ['status']);
   // const git = childProcess.spawn('ls');
   const out = [];
   git.stdout.on('data', (data) => {
@@ -26,6 +26,25 @@ app.get('/git', (req, res) => {
     res.send(`${out.toString()}`);
   });
 });
+
+
+app.get('/gitcwd', (req, res) => {
+  const git = childProcess.spawn('git', ['status'], { cwd: './repo' });
+  // const git = childProcess.spawn('ls');
+  const out = [];
+  git.stdout.on('data', (data) => {
+    out.push(data);
+  });
+  git.stderr.on('data', (data) => {
+    out.push(data);
+  });
+  git.on('close', (code) => {
+    console.log(out.toString());
+    res.send(`${out.toString()}`);
+  });
+});
+
+
 
 app.get('/ls', (req, res) => {
   const git = childProcess.spawn('ls');
