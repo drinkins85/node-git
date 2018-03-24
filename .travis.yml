@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- node
+os:
+- linux
+notifications:
+  email: false
+script:
+- npm run ci
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: k59kvy28FbfJ9MTQxo9WJNHZLaHR9s5LitVPrp0PDjvYR7JFH/Y7aR8/TsaQk1dy7fmGwDhcqkfqOCvl8BcGzs9CFEdpPz/8PJAG0cbehAkwH3H9YI8RvHxNQe1jgTx/UPePPajyVIm/+fr68jzt8W+/y9P8vgG/on7/Aypv1uOw+O7IghcaS5CS+8PvI77ygIVQvyx/aObd87IjZ9SIMNFA2h4Ej8qxULzERplteyxehzgTiWkfrGJKARySFKCBbYPLRUbCQqTXyaTdNGZgO1Fvt7WJOL97HTYDchim4lUyfK65lHGHw85j/GepJ297kItRWBK7Ns9hEfVjoe3hCDQOGvIwx/882MS4modpsHH+mICMh21C9sf/388GNXx5b/3HTaPgVp+qVylDannK0HXoP5teCFuf+Bdu5ZlguZQkK2HtDvXIoVz4zCK/JsQCVFqQqN9FaDM5TfmOa/xWxX6Y30PLLFe3YmTg3WLoRWyveBzjPDEZGmT7p6rLJ2yeQsh9z43qe3jWt9z976y/Mjt6C+xdWabqyBDuaPWPVDj8+vRLmSH2LFCv+5TNzNIMryIO7NxzJvJ7uX+CXA++kgeQa9s9ZrNlBoDqUVIehR9I/eGVzsoU7PMGMs/ZGjqK1df4D3jWt7WFK/crF37Y39mJuTfNw4V06SYEHNECLmQ=
+  app: node-git-test-app
+  on:
+    repo: drinkins85/node-git
