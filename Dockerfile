@@ -7,10 +7,10 @@ RUN apt-get update
 RUN apt-get install -y git
 #RUN git clone https://github.com/drinkins85/node-git.git newrepo
 
-COPY package*.json ./
+#COPY package*.json ./
 
-RUN npm install
-RUN npm run build
+#RUN npm install
+#RUN npm run build
 
 # If you are building your code for production
 # RUN npm install --only=production
@@ -18,6 +18,7 @@ RUN npm run build
 # Bundle app source
 COPY . .
 
-EXPOSE 3001
+RUN npm install --quient
+RUN npm run build
 
 CMD [ "npm", "start" ]

@@ -56,7 +56,7 @@ app.get('/gitclone', (req, res) => {
   });
   git.on('close', (code) => {
     console.log(out.toString());
-    res.send(`${out.toString()}`);
+    res.send(`res: ${out.toString()}`);
   });
 });
 
