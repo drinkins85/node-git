@@ -9,6 +9,8 @@ script:
 - npm run ci
 deploy:
   provider: heroku
+   script:
+  - npm run build
   api_key:
     secure: RQ+PqAh3M8j8pmmDdbEsTacBQlijspH8Uxj28LU+o5ZVy1yz2zwDp5BjeCzTRNyqW1EmntPCqPCHf+OQhFOGDcnngfbBwrh0lmqKBzm5nCI37sVRBdavdZocXMI2NkC1kP6tk98390HdaaGlssk8gpwVK45wDCVQO/npVHwypOwiOeGPm0I+iXd7bF6+DQDzZfxBR52CtbjLL0GZb1fvH0fAz7kG7c9l1pW99Mcvka9drid7G19bBO5wAPmhnS4ZCu9lSQiTRzSqbM3A2IeOQCLhivZBMk/qNYZcVcG8tRm3zUSzbBSftPcLV81PhHR0zEW2hZmPooVNGQ8hunL5mZ871/N5wCmVAy/3pZbM1JI1slG2sVp83LOeysvKLaNGDABW5jlX3h2xmpILo3N8d+AgUXDlTI/3ZduSrwhjQNEE6TZ60qzlcymcDStZI/vTz55iz3jb6aBDXiCxc6SyCmY6kQi8UP5Azu777u1a9ui6Buywghygxrh+7HOmxBXvQkeMu4CYwwbnlb93lHcjq+0RI/rG8175R9//Fpxo7hvT8OhhmBTH3WbmIDBDLsY8qpfynusIXjr2C/M5Qcr70XPARHVwjo4GhO6yPs2WCgcd3Z0oVRnuz7DmEidvwrT42Iph27fWnTiiD/q2csLC7o7wBTEI82+qH5t54vg40xw=
   app: node-git-test-app
