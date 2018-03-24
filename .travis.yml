@@ -15,4 +15,4 @@ deploy:
     - npm run build
   app: node-git-test-app
   on:
-    repo: drinkins85/shri-hw-node-git
+    repo: drinkins85/node-git
