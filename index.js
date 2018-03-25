@@ -8,7 +8,7 @@ const host = '0.0.0.0';
 app.use(express.static(`${__dirname}/public`));
 
 app.get('/', (req, res) => {
-  res.send('Hello, World11');
+  res.send('Hello, World');
 });
 
 app.get('/git', (req, res) => {
