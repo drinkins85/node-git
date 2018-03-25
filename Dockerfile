@@ -16,7 +16,7 @@ RUN apt-get install -y git
 # RUN npm install --only=production
 
 # Bundle app source
-COPY . /usr/src/app
+COPY . .
 
 RUN npm install --quient
 RUN npm run build
