@@ -3,13 +3,10 @@ node_js:
 - node
 os:
 - linux
-services:
-- docker
 notifications:
   email: false
 script:
 - npm run ci
-- docker build -t node-git-test-app:latest .
 deploy:
   provider: heroku
   api_key:
